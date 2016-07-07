@@ -28,15 +28,15 @@ public class Ipod implements Radio {
 	}
 
 	@Override
-	public void saveEmisora(int btn) {
+	public void saveEmisora(int btn, double emisora) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void selectEmisora(int btn) {
+	public double selectEmisora(int btn) {
 		// TODO Auto-generated method stub
-		
+		return 0;
 	}
 
 	@Override

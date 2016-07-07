@@ -5,7 +5,7 @@
  */
 public interface Radio {
 
-    /*
+    /**
         Metodo de encendido
         @param estado, define el estado de apagado/encendido
         True -> encendido
@@ -13,7 +13,7 @@ public interface Radio {
      */
     void setEncendido(boolean estado);
 
-    /*
+    /**
         Metodo de cambio de frecuencia
         @param frecuencia, define el estado de AM/FM
         True -> FM
@@ -22,28 +22,28 @@ public interface Radio {
 
     void setFrecuencia(boolean frecuencia);
 
-    /*
+    /**
         Metodo de emisora
         @param emisora, define la emisora que se esta "escuchando"
      */
 
     void setEmisora(double emisora);
 
-    /*
+    /**
         Metodo de guardar emisora en un boton
         @param btn, contiene el ID del boton
      */
 
-    void saveEmisora(int btn);
+    void saveEmisora(int btn, double emisora);
 
-    /*
+    /**
         Metodo de seleccionar emisora
         @param btn, contiene el ID del boton
      */
 
-    void selectEmisora(int btn);
+    double selectEmisora(int btn);
 
-    /*
+    /**
         Metodo para obtener el estado actual de la radio
         @ return Estado de la radio
         True -> Encendido
@@ -52,7 +52,7 @@ public interface Radio {
 
     boolean getEncendido();
 
-    /*
+    /**
         Metodo para obtener la frecuencia actual
         @return frecuencia actual
         True -> FM
@@ -61,7 +61,7 @@ public interface Radio {
 
     boolean getFrecuencia();
 
-    /*
+    /**
         Metodo para obtener la emisora
         @return emisora que se esta "escuchando"
      */
