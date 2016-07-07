@@ -3,22 +3,36 @@
   associations="true" dependencies="false" nesting-relationships="true">  
   <interface id="1" language="java" name="Radio" project="ADT" file="/ADT/src/Radio.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="207" width="164" x="36" y="275"/>    
+    <position height="-1" width="-1" x="140" y="107"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="2" language="java" name="Ipod" project="ADT" file="/ADT/src/Ipod.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="225" width="164" x="36" y="10"/>    
+  <class id="2" language="java" name="GUI_IPOd" project="ADT" file="/ADT/src/GUI_IPOd.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="639" width="165" x="334" y="-136"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <realization id="3">    
+  <class id="3" language="java" name="GUI_IPOd.ManejadorEventos" project="ADT" file="/ADT/src/GUI_IPOd.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="148" y="303"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <nesting id="4">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="3"/>  
+  </nesting>  
+  <realization id="5">    
     <end type="SOURCE" refId="2"/>    
     <end type="TARGET" refId="1"/>  
   </realization>  
