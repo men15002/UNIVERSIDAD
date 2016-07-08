@@ -1,5 +1,5 @@
 /**
- * @author UVG Clase, seccion: 30
+ * @author Carlos Calderon, seccion: 30
  *
  * Descripcion: Interfaz que describe el funcionamiento de una Radio
  */
