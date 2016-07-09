@@ -235,16 +235,41 @@ public class GUI_IPOd implements Radio {
 					saveEmisora(1,Double.parseDouble(lblnumest.getText().replace(',','.')));
 				}
 				else if(guardar==false){
-					lblnumest.setText(""+selectEmisora(1));
-				}
-			}
+					if (selectEmisora(0)<400){
+						combo.setSelectedItem("F.M.");
+						emisoraa=selectEmisora(0);
+						lblnumest.setText(""+selectEmisora(1));
+						
 
+					}
+					
+					if (selectEmisora(0)>400){
+						combo.setSelectedItem("A.M.");
+
+						emisorab=selectEmisora(0);
+						lblnumest.setText(""+selectEmisora(1));		
+						}
+			}
+			}
 			if (e.getSource() == btnFav3) {
 				if (guardar==true){
 					saveEmisora(2,Double.parseDouble(lblnumest.getText().replace(',','.')));
 				}
 				else if(guardar==false){
-					lblnumest.setText(""+selectEmisora(2));
+					if (selectEmisora(0)<400){
+						combo.setSelectedItem("F.M.");
+						emisoraa=selectEmisora(0);
+						lblnumest.setText(""+selectEmisora(2));
+						
+
+					}
+					
+					if (selectEmisora(0)>400){
+						combo.setSelectedItem("A.M.");
+
+						emisorab=selectEmisora(0);
+						lblnumest.setText(""+selectEmisora(2));		
+						}
 				}
 			}
 			if (e.getSource() == btnFav4) {
@@ -252,31 +277,85 @@ public class GUI_IPOd implements Radio {
 					saveEmisora(3,Double.parseDouble(lblnumest.getText().replace(',','.')));
 				}
 				else if(guardar==false){
-					lblnumest.setText(""+selectEmisora(3));
-				}
+					if (selectEmisora(0)<400){
+						combo.setSelectedItem("F.M.");
+						emisoraa=selectEmisora(0);
+						lblnumest.setText(""+selectEmisora(3));
+						
+
+					}
+					
+					if (selectEmisora(0)>400){
+						combo.setSelectedItem("A.M.");
+
+						emisorab=selectEmisora(0);
+						lblnumest.setText(""+selectEmisora(3));		
+						}
+					}
 			}
 			if (e.getSource() == btnFav5) {
 				if (guardar==true){
 					saveEmisora(4,Double.parseDouble(lblnumest.getText().replace(',','.')));
 				}
 				else if(guardar==false){
-					lblnumest.setText(""+selectEmisora(4));
-				}
+					if (selectEmisora(0)<400){
+						combo.setSelectedItem("F.M.");
+						emisoraa=selectEmisora(0);
+						lblnumest.setText(""+selectEmisora(4));
+						
+
+					}
+					
+					if (selectEmisora(0)>400){
+						combo.setSelectedItem("A.M.");
+
+						emisorab=selectEmisora(0);
+						lblnumest.setText(""+selectEmisora(4));		
+						}				
+					}
 			}
+			
 			if (e.getSource() == btnFav6) {
 				if (guardar==true){
 					saveEmisora(5,Double.parseDouble(lblnumest.getText().replace(',','.')));
 				}
 				else if(guardar==false){
-					lblnumest.setText(""+selectEmisora(5));
-				}
+					if (selectEmisora(0)<400){
+						combo.setSelectedItem("F.M.");
+						emisoraa=selectEmisora(0);
+						lblnumest.setText(""+selectEmisora(5));
+						
+
+					}
+					
+					if (selectEmisora(0)>400){
+						combo.setSelectedItem("A.M.");
+
+						emisorab=selectEmisora(0);
+						lblnumest.setText(""+selectEmisora(5));		
+						}				
+					}
 			}
 			if (e.getSource() == btnFav7) {
 				if (guardar==true){
 					saveEmisora(6,Double.parseDouble(lblnumest.getText().replace(',','.')));
 				}
 				else if(guardar==false){
-					lblnumest.setText(""+selectEmisora(6));
+
+					if (selectEmisora(0)<400){
+						combo.setSelectedItem("F.M.");
+						emisoraa=selectEmisora(0);
+						lblnumest.setText(""+selectEmisora(6));
+						
+
+					}
+					
+					if (selectEmisora(0)>400){
+						combo.setSelectedItem("A.M.");
+
+						emisorab=selectEmisora(0);
+						lblnumest.setText(""+selectEmisora(6));		
+						}
 				}
 			}
 			if (e.getSource() == btnFav8) {
@@ -284,7 +363,20 @@ public class GUI_IPOd implements Radio {
 					saveEmisora(7,Double.parseDouble(lblnumest.getText().replace(',','.')));
 				}
 				else if(guardar==false){
-					lblnumest.setText(""+selectEmisora(7));
+					if (selectEmisora(0)<400){
+						combo.setSelectedItem("F.M.");
+						emisoraa=selectEmisora(0);
+						lblnumest.setText(""+selectEmisora(7));
+						
+
+					}
+					
+					if (selectEmisora(0)>400){
+						combo.setSelectedItem("A.M.");
+
+						emisorab=selectEmisora(0);
+						lblnumest.setText(""+selectEmisora(7));		
+						}					
 				}
 			}
 			if (e.getSource() == btnFav9) {
@@ -292,7 +384,20 @@ public class GUI_IPOd implements Radio {
 					saveEmisora(8,Double.parseDouble(lblnumest.getText().replace(',','.')));
 				}
 				else if(guardar==false){
-					lblnumest.setText(""+selectEmisora(8));
+					if (selectEmisora(0)<400){
+						combo.setSelectedItem("F.M.");
+						emisoraa=selectEmisora(0);
+						lblnumest.setText(""+selectEmisora(8));
+						
+
+					}
+					
+					if (selectEmisora(0)>400){
+						combo.setSelectedItem("A.M.");
+
+						emisorab=selectEmisora(0);
+						lblnumest.setText(""+selectEmisora(8));		
+						}
 				}
 			}
 			if (e.getSource() == btnFav10) {
@@ -300,7 +405,21 @@ public class GUI_IPOd implements Radio {
 					saveEmisora(9,Double.parseDouble(lblnumest.getText().replace(',','.')));
 				}
 				else if(guardar==false){
-					lblnumest.setText(""+selectEmisora(9));
+
+					if (selectEmisora(0)<400){
+						combo.setSelectedItem("F.M.");
+						emisoraa=selectEmisora(0);
+						lblnumest.setText(""+selectEmisora(9));
+						
+
+					}
+					
+					if (selectEmisora(0)>400){
+						combo.setSelectedItem("A.M.");
+
+						emisorab=selectEmisora(0);
+						lblnumest.setText(""+selectEmisora(9));		
+						}
 				}
 			}
 			if (e.getSource() == btnFav11) {
@@ -308,7 +427,20 @@ public class GUI_IPOd implements Radio {
 					saveEmisora(10,Double.parseDouble(lblnumest.getText().replace(',','.')));
 				}
 				else if(guardar==false){
-					lblnumest.setText(""+selectEmisora(10));
+					if (selectEmisora(0)<400){
+						combo.setSelectedItem("F.M.");
+						emisoraa=selectEmisora(0);
+						lblnumest.setText(""+selectEmisora(10));
+						
+
+					}
+					
+					if (selectEmisora(0)>400){
+						combo.setSelectedItem("A.M.");
+
+						emisorab=selectEmisora(0);
+						lblnumest.setText(""+selectEmisora(10));		
+						}
 				}
 			}
 			if (e.getSource() == btnFav12) {
@@ -316,7 +448,21 @@ public class GUI_IPOd implements Radio {
 					saveEmisora(11,Double.parseDouble(lblnumest.getText().replace(',','.')));
 				}
 				else if(guardar==false){
-					lblnumest.setText(""+selectEmisora(11));
+					if (selectEmisora(0)<400){
+						combo.setSelectedItem("F.M.");
+						emisoraa=selectEmisora(0);
+						lblnumest.setText(""+selectEmisora(11));
+						
+
+					}
+					
+					if (selectEmisora(0)>400){
+						combo.setSelectedItem("A.M.");
+
+						emisorab=selectEmisora(0);
+						lblnumest.setText(""+selectEmisora(11));		
+						}
+				
 				}
 			}
 			if (e.getSource()==combo) {
