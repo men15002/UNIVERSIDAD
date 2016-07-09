@@ -204,105 +204,100 @@ public class GUI_IPOd implements Radio {
 
 		public void actionPerformed(ActionEvent e) {
 			if (e.getSource() == btnFav1) {
-				System.out.println("hola");
 					if (guardar==true){
-						System.out.println("EStoy en true");
 						saveEmisora(0,Double.parseDouble(lblnumest.getText()));
-						System.out.println(lblnumest.getText());
 					}
 					else if(guardar==false){
-						System.out.println("EStoy en false");
 						lblnumest.setText(""+selectEmisora(0));
-						System.out.println(selectEmisora(0));
 					}
 				
 			}
 			if (e.getSource() == btnFav2) {
-				if (guardar=true){
+				if (guardar==true){
 					saveEmisora(1,Double.parseDouble(lblnumest.getText()));
 				}
-				else if(guardar=false){
+				else if(guardar==false){
 					lblnumest.setText(""+selectEmisora(1));
 				}
 			}
 
 			if (e.getSource() == btnFav3) {
-				if (guardar=true){
+				if (guardar==true){
 					saveEmisora(2,Double.parseDouble(lblnumest.getText()));
 				}
-				else if(guardar=false){
+				else if(guardar==false){
 					lblnumest.setText(""+selectEmisora(2));
 				}
 			}
 			if (e.getSource() == btnFav4) {
-				if (guardar=true){
+				if (guardar==true){
 					saveEmisora(3,Double.parseDouble(lblnumest.getText()));
 				}
-				else if(guardar=false){
+				else if(guardar==false){
 					lblnumest.setText(""+selectEmisora(3));
 				}
 			}
 			if (e.getSource() == btnFav5) {
-				if (guardar=true){
+				if (guardar==true){
 					saveEmisora(4,Double.parseDouble(lblnumest.getText()));
 				}
-				else if(guardar=false){
+				else if(guardar==false){
 					lblnumest.setText(""+selectEmisora(4));
 				}
 			}
 			if (e.getSource() == btnFav6) {
-				if (guardar=true){
+				if (guardar==true){
 					saveEmisora(5,Double.parseDouble(lblnumest.getText()));
 				}
-				else if(guardar=false){
+				else if(guardar==false){
 					lblnumest.setText(""+selectEmisora(5));
 				}
 			}
 			if (e.getSource() == btnFav7) {
-				if (guardar=true){
+				if (guardar==true){
 					saveEmisora(6,Double.parseDouble(lblnumest.getText()));
 				}
-				else if(guardar=false){
+				else if(guardar==false){
 					lblnumest.setText(""+selectEmisora(6));
 				}
 			}
 			if (e.getSource() == btnFav8) {
-				if (guardar=true){
+				if (guardar==true){
 					saveEmisora(7,Double.parseDouble(lblnumest.getText()));
 				}
-				else if(guardar=false){
+				else if(guardar==false){
 					lblnumest.setText(""+selectEmisora(7));
 				}
 			}
 			if (e.getSource() == btnFav9) {
-				if (guardar=true){
+				if (guardar==true){
 					saveEmisora(8,Double.parseDouble(lblnumest.getText()));
 				}
-				else if(guardar=false){
+				else if(guardar==false){
 					lblnumest.setText(""+selectEmisora(8));
 				}
 			}
 			if (e.getSource() == btnFav10) {
-				if (guardar=true){
+				if (guardar==true){
 					saveEmisora(9,Double.parseDouble(lblnumest.getText()));
 				}
-				else if(guardar=false){
+				else if(guardar==false){
 					lblnumest.setText(""+selectEmisora(9));
 				}
 			}
 			if (e.getSource() == btnFav11) {
-				if (guardar=true){
+				if (guardar==true){
 					saveEmisora(10,Double.parseDouble(lblnumest.getText()));
 				}
-				else if(guardar=false){
+				else if(guardar==false){
 					lblnumest.setText(""+selectEmisora(10));
 				}
 			}
 			if (e.getSource() == btnFav12) {
-				if (guardar=true){
+				if (guardar==true){
 					saveEmisora(11,Double.parseDouble(lblnumest.getText()));
 				}
-				else if(guardar=false){
+				else if(guardar==false){
 					lblnumest.setText(""+selectEmisora(11));
 				}
 			}
