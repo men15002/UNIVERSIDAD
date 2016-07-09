@@ -391,18 +391,56 @@ public class GUI_IPOd implements Radio {
 	@Override
 	public void setEncendido(boolean estado) {
 		this.estado=estado;
-		if (this.estado==true){
-			avisoencendido= "La radio esta encendida.";
-			lblEncendido.setText(avisoencendido);
+			if (this.estado==true){
+				avisoencendido= "La radio esta encendida.";
+				lblEncendido.setText(avisoencendido);
+				btnretroceder.setEnabled(true);
+				combo.setEnabled(true);
+				combo2.setEnabled(true);
+				btnAvanzar.setEnabled(true);
+				btnFav1.setEnabled(true);
+				btnFav2.setEnabled(true);
+				btnFav3.setEnabled(true);
+				btnFav4.setEnabled(true);
+				btnFav5.setEnabled(true);
+				btnFav6.setEnabled(true);
+				btnFav7.setEnabled(true);
+				btnFav8.setEnabled(true);
+				btnFav9.setEnabled(true);
+				btnFav10.setEnabled(true);
+				btnFav11.setEnabled(true);
+				btnFav12.setEnabled(true);	
+
+
+			}
+			else if (this.estado==false){
+				avisoencendido= "La radio esta apagada.";
+				lblEncendido.setText(avisoencendido);
+				btnretroceder.setEnabled(false);
+				combo.setEnabled(false);
+				combo2.setEnabled(false);
+				btnAvanzar.setEnabled(false);
+				btnFav1.setEnabled(false);
+				btnFav2.setEnabled(false);
+				btnFav3.setEnabled(false);
+				btnFav4.setEnabled(false);
+				btnFav5.setEnabled(false);
+				btnFav6.setEnabled(false);
+				btnFav7.setEnabled(false);
+				btnFav8.setEnabled(false);
+				btnFav9.setEnabled(false);
+				btnFav10.setEnabled(false);
+				btnFav11.setEnabled(false);
+				btnFav12.setEnabled(false);	
+
+
+
+			}
+			
 			
 		}
-		else if (this.estado==false){
-			avisoencendido= "La radio esta apagada.";
-			lblEncendido.setText(avisoencendido);
-		}
 		
-		
-	}
+	
 
 	@Override
 	public void setFrecuencia(boolean frecuencia) {
