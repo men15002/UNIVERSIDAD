@@ -1,7 +1,7 @@
 /**
    Interfaz que describe el funcionamiento de una radio.
    @author Seccion 30. Algoritmos y Estructuras de Datos, Universidad del Valle de Guatemala.
-   @version 1.0.3
+   @version 2.1.2 Julio 9, 2016
  */
 public interface Radio {
 
