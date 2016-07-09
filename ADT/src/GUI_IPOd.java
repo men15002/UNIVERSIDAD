@@ -211,14 +211,18 @@ public class GUI_IPOd implements Radio {
 					else if(guardar==false){
 						
 						if (selectEmisora(0)<400){
-							lblnumest.setText(""+selectEmisora(0));
 							combo.setSelectedItem("F.M.");
+							emisoraa=selectEmisora(0);
+							lblnumest.setText(""+selectEmisora(0));
+							
 
 						}
 						
 						if (selectEmisora(0)>400){
-							lblnumest.setText(""+selectEmisora(0));
 							combo.setSelectedItem("A.M.");
+
+							emisorab=selectEmisora(0);
+							lblnumest.setText(""+selectEmisora(0));
 }
 						
 						
