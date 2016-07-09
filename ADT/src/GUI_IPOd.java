@@ -364,9 +364,10 @@ public class GUI_IPOd implements Radio {
 			if (e.getSource() == btnAvanzar) {
 				if (getFrecuencia()==true){
 					if(emisoraa==107.9){
-						emisoraa=107.9;
+						System.out.println("tope");
+						emisoraa=emisoraa;
 					}
-					else if (emisoraa>=87.9||emisoraa<107.9){
+					else if (emisoraa>=87.9 && emisoraa<107.9){
 						emisoraa=emisoraa+.2;
 						DecimalFormat formateador = new DecimalFormat("###0.##"); 
 						lblnumest.setText(""+formateador.format(emisoraa));
@@ -376,7 +377,8 @@ public class GUI_IPOd implements Radio {
 					if(emisorab==1610){
 						emisorab=emisorab;
 					}
-					else if(emisorab>=530||emisorab<1610){
+					
+					else if(emisorab>530||emisorab<1610){
 						emisorab=emisorab+10;
 						lblnumest.setText(""+emisorab);
 					}
