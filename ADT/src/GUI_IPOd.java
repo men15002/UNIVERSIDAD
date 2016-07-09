@@ -22,7 +22,6 @@ public class GUI_IPOd implements Radio {
 	 * 
 	 */
 	private JFrame frmIpod;
-	private JButton[] favoritos;
 	private JButton btnEncender;
 	private JButton btnretroceder;
 	private JButton btnAvanzar;
@@ -37,6 +36,18 @@ public class GUI_IPOd implements Radio {
 	private boolean frecuencia=true,estado=true,guardar=true;
 	private double emisora,emisoraa=87.9,emisorab=530;
 	private double []fav;
+	private JButton btnFav1;
+	private JButton btnFav2;
+	private JButton btnFav3;
+	private JButton btnFav4;
+	private JButton btnFav5;
+	private JButton btnFav6;
+	private JButton btnFav7;
+	private JButton btnFav8;
+	private JButton btnFav9;
+	private JButton btnFav10;
+	private JButton btnFav11;
+	private JButton btnFav12;
 	/**
 	 * Launch the application.
 	 */
@@ -97,56 +108,56 @@ public class GUI_IPOd implements Radio {
 		lblfavoritos.setBounds(22, 111, 105, 14);
 		frmIpod.getContentPane().add(lblfavoritos);
 		
-		favoritos = new JButton[12];
 		fav = new double[12];
 		
-		favoritos[0] = new JButton("btnFav1");
-		favoritos[0].setBounds(11, 130, 84, 28);
-		frmIpod.getContentPane().add(favoritos[0]);
+		btnFav1 = new JButton("btnFav1");
+		btnFav1.setBounds(11, 130, 84, 28);
+		frmIpod.getContentPane().add(btnFav1);
 
-		favoritos[1] = new JButton("btnFav2");
-		favoritos[1].setBounds(11, 169, 84, 28);
-		frmIpod.getContentPane().add(favoritos[1]);
+		btnFav2 = new JButton("btnFav2");
+		btnFav2.setBounds(11, 169, 84, 28);
+		frmIpod.getContentPane().add(btnFav2);
 
-		favoritos[2] = new JButton("btnFav3");
-		favoritos[2].setBounds(102, 130, 84, 28);
-		frmIpod.getContentPane().add(favoritos[2]);
+		btnFav3 = new JButton("btnFav3");
+		btnFav3.setBounds(102, 130, 84, 28);
+		frmIpod.getContentPane().add(btnFav3);
 
-		favoritos[3] = new JButton("btnFav4");
-		favoritos[3].setBounds(102, 169, 84, 28);
-		frmIpod.getContentPane().add(favoritos[3]);
+		btnFav4 = new JButton("btnFav4");
+		btnFav4.setBounds(102, 169, 84, 28);
+		frmIpod.getContentPane().add(btnFav4);
 
-		favoritos[4] = new JButton("btnFav5");
-		favoritos[4].setBounds(193, 130, 84, 28);
-		frmIpod.getContentPane().add(favoritos[4]);
+		btnFav5 = new JButton("btnFav5");
+		btnFav5.setBounds(193, 130, 84, 28);
+		frmIpod.getContentPane().add(btnFav5);
 
-		favoritos[5] = new JButton("btnFav6");
-		favoritos[5].setBounds(193, 169, 84, 28);
-		frmIpod.getContentPane().add(favoritos[5]);
+		btnFav6 = new JButton("btnFav6");
+		btnFav6.setBounds(193, 169, 84, 28);
+		frmIpod.getContentPane().add(btnFav6);
 
-		favoritos[6] = new JButton("btnFav7");
-		favoritos[6].setBounds(284, 130, 84, 28);
-		frmIpod.getContentPane().add(favoritos[6]);
+		btnFav7 = new JButton("btnFav7");
+		btnFav7.setBounds(284, 130, 84, 28);
+		frmIpod.getContentPane().add(btnFav7);
 
-		favoritos[7] = new JButton("btnFav8");
-		favoritos[7].setBounds(287, 169, 84, 28);
-		frmIpod.getContentPane().add(favoritos[7]);
+		btnFav8 = new JButton("btnFav8");
+		btnFav8.setBounds(287, 169, 84, 28);
+		frmIpod.getContentPane().add(btnFav8);
 
-		favoritos[8] = new JButton("btnFav9");
-		favoritos[8].setBounds(371, 130, 84, 28);
-		frmIpod.getContentPane().add(favoritos[8]);
+		btnFav9 = new JButton("btnFav9");
+		btnFav9.setBounds(371, 130, 84, 28);
+		frmIpod.getContentPane().add(btnFav9);
 
-		favoritos[9] = new JButton("btnFav10");
-		favoritos[9].setBounds(375, 169, 84, 28);
-		frmIpod.getContentPane().add(favoritos[9]);
+		btnFav10 = new JButton("btnFav10");
+		btnFav10.setBounds(375, 169, 84, 28);
+		frmIpod.getContentPane().add(btnFav10);
 
-		favoritos[10] = new JButton("btnFav11");
-		favoritos[10].setBounds(462, 130, 84, 28);
-		frmIpod.getContentPane().add(favoritos[10]);
+		btnFav11 = new JButton("btnFav11");
+		btnFav11.setBounds(462, 130, 84, 28);
+		frmIpod.getContentPane().add(btnFav11);
 
-		favoritos[11] = new JButton("btnFav12");
-		favoritos[11].setBounds(463, 169, 84, 28);
-		frmIpod.getContentPane().add(favoritos[11]);
+		btnFav12 = new JButton("btnFav12");
+		btnFav12.setBounds(463, 169, 84, 28);
+		frmIpod.getContentPane().add(btnFav12);
+
 
 		combo = new JComboBox();
 		combo.addItem("F.M.");
@@ -170,18 +181,18 @@ public class GUI_IPOd implements Radio {
 		btnretroceder.addActionListener(new ManejadorEventos());
 		btnEncender.addActionListener(new ManejadorEventos());
 		btnAvanzar.addActionListener(new ManejadorEventos());
-		favoritos[0].addActionListener(new ManejadorEventos());
-		favoritos[1].addActionListener(new ManejadorEventos());
-		favoritos[2].addActionListener(new ManejadorEventos());
-		favoritos[3].addActionListener(new ManejadorEventos());
-		favoritos[4].addActionListener(new ManejadorEventos());
-		favoritos[5].addActionListener(new ManejadorEventos());
-		favoritos[6].addActionListener(new ManejadorEventos());
-		favoritos[7].addActionListener(new ManejadorEventos());
-		favoritos[8].addActionListener(new ManejadorEventos());
-		favoritos[9].addActionListener(new ManejadorEventos());
-		favoritos[10].addActionListener(new ManejadorEventos());
-		favoritos[11].addActionListener(new ManejadorEventos());
+		btnFav1.addActionListener(new ManejadorEventos());
+		btnFav2.addActionListener(new ManejadorEventos());
+		btnFav3.addActionListener(new ManejadorEventos());
+		btnFav4.addActionListener(new ManejadorEventos());
+		btnFav5.addActionListener(new ManejadorEventos());
+		btnFav6.addActionListener(new ManejadorEventos());
+		btnFav7.addActionListener(new ManejadorEventos());
+		btnFav8.addActionListener(new ManejadorEventos());
+		btnFav9.addActionListener(new ManejadorEventos());
+		btnFav10.addActionListener(new ManejadorEventos());
+		btnFav11.addActionListener(new ManejadorEventos());
+		btnFav12.addActionListener(new ManejadorEventos());
 
 	}
 
@@ -192,7 +203,107 @@ public class GUI_IPOd implements Radio {
 	private class ManejadorEventos implements ActionListener {
 
 		public void actionPerformed(ActionEvent e) {
+			if (e.getSource() == btnFav1) {
+				System.out.println("hola");
+					if (guardar=true){
+						saveEmisora(0,Double.parseDouble(lblnumest.getText()));
+						System.out.println(lblnumest.getText());
+					}
+					else if(guardar=false){
+						lblnumest.setText(""+selectEmisora(0));
+						System.out.println(selectEmisora(0));
+					}
+				
+			}
+			if (e.getSource() == btnFav2) {
+				if (guardar=true){
+					saveEmisora(1,Double.parseDouble(lblnumest.getText()));
+				}
+				else if(guardar=false){
+					lblnumest.setText(""+selectEmisora(1));
+				}
+			}
 
+			if (e.getSource() == btnFav3) {
+				if (guardar=true){
+					saveEmisora(2,Double.parseDouble(lblnumest.getText()));
+				}
+				else if(guardar=false){
+					lblnumest.setText(""+selectEmisora(2));
+				}
+			}
+			if (e.getSource() == btnFav4) {
+				if (guardar=true){
+					saveEmisora(3,Double.parseDouble(lblnumest.getText()));
+				}
+				else if(guardar=false){
+					lblnumest.setText(""+selectEmisora(3));
+				}
+			}
+			if (e.getSource() == btnFav5) {
+				if (guardar=true){
+					saveEmisora(4,Double.parseDouble(lblnumest.getText()));
+				}
+				else if(guardar=false){
+					lblnumest.setText(""+selectEmisora(4));
+				}
+			}
+			if (e.getSource() == btnFav6) {
+				if (guardar=true){
+					saveEmisora(5,Double.parseDouble(lblnumest.getText()));
+				}
+				else if(guardar=false){
+					lblnumest.setText(""+selectEmisora(5));
+				}
+			}
+			if (e.getSource() == btnFav7) {
+				if (guardar=true){
+					saveEmisora(6,Double.parseDouble(lblnumest.getText()));
+				}
+				else if(guardar=false){
+					lblnumest.setText(""+selectEmisora(6));
+				}
+			}
+			if (e.getSource() == btnFav8) {
+				if (guardar=true){
+					saveEmisora(7,Double.parseDouble(lblnumest.getText()));
+				}
+				else if(guardar=false){
+					lblnumest.setText(""+selectEmisora(7));
+				}
+			}
+			if (e.getSource() == btnFav9) {
+				if (guardar=true){
+					saveEmisora(8,Double.parseDouble(lblnumest.getText()));
+				}
+				else if(guardar=false){
+					lblnumest.setText(""+selectEmisora(8));
+				}
+			}
+			if (e.getSource() == btnFav10) {
+				if (guardar=true){
+					saveEmisora(9,Double.parseDouble(lblnumest.getText()));
+				}
+				else if(guardar=false){
+					lblnumest.setText(""+selectEmisora(9));
+				}
+			}
+			if (e.getSource() == btnFav11) {
+				if (guardar=true){
+					saveEmisora(10,Double.parseDouble(lblnumest.getText()));
+				}
+				else if(guardar=false){
+					lblnumest.setText(""+selectEmisora(10));
+				}
+			}
+			if (e.getSource() == btnFav12) {
+				if (guardar=true){
+					saveEmisora(11,Double.parseDouble(lblnumest.getText()));
+				}
+				else if(guardar=false){
+					lblnumest.setText(""+selectEmisora(11));
+				}
+			}
 			if (e.getSource()==combo) {
 				 
 				 String seleccionado=(String)combo.getSelectedItem();
@@ -272,108 +383,6 @@ public class GUI_IPOd implements Radio {
 					}
 			}
 			
-
-			if (e.getSource() == favoritos[0]) {
-				System.out.println("hola");
-					if (guardar=true){
-						saveEmisora(0,Double.parseDouble(lblnumest.getText()));
-						System.out.println(lblnumest.getText());
-					}
-					else if(guardar=false){
-						lblnumest.setText(""+selectEmisora(0));
-						System.out.println(selectEmisora(0));
-					}
-				
-			}
-			if (e.getSource() == favoritos[1]) {
-				if (guardar=true){
-					saveEmisora(1,Double.parseDouble(lblnumest.getText()));
-				}
-				else if(guardar=false){
-					lblnumest.setText(""+selectEmisora(1));
-				}
-			}
-
-			if (e.getSource() == favoritos[2]) {
-				if (guardar=true){
-					saveEmisora(2,Double.parseDouble(lblnumest.getText()));
-				}
-				else if(guardar=false){
-					lblnumest.setText(""+selectEmisora(2));
-				}
-			}
-			if (e.getSource() == favoritos[3]) {
-				if (guardar=true){
-					saveEmisora(3,Double.parseDouble(lblnumest.getText()));
-				}
-				else if(guardar=false){
-					lblnumest.setText(""+selectEmisora(3));
-				}
-			}
-			if (e.getSource() == favoritos[4]) {
-				if (guardar=true){
-					saveEmisora(4,Double.parseDouble(lblnumest.getText()));
-				}
-				else if(guardar=false){
-					lblnumest.setText(""+selectEmisora(4));
-				}
-			}
-			if (e.getSource() == favoritos[5]) {
-				if (guardar=true){
-					saveEmisora(5,Double.parseDouble(lblnumest.getText()));
-				}
-				else if(guardar=false){
-					lblnumest.setText(""+selectEmisora(5));
-				}
-			}
-			if (e.getSource() == favoritos[6]) {
-				if (guardar=true){
-					saveEmisora(6,Double.parseDouble(lblnumest.getText()));
-				}
-				else if(guardar=false){
-					lblnumest.setText(""+selectEmisora(6));
-				}
-			}
-			if (e.getSource() == favoritos[7]) {
-				if (guardar=true){
-					saveEmisora(7,Double.parseDouble(lblnumest.getText()));
-				}
-				else if(guardar=false){
-					lblnumest.setText(""+selectEmisora(7));
-				}
-			}
-			if (e.getSource() == favoritos[8]) {
-				if (guardar=true){
-					saveEmisora(8,Double.parseDouble(lblnumest.getText()));
-				}
-				else if(guardar=false){
-					lblnumest.setText(""+selectEmisora(8));
-				}
-			}
-			if (e.getSource() == favoritos[9]) {
-				if (guardar=true){
-					saveEmisora(9,Double.parseDouble(lblnumest.getText()));
-				}
-				else if(guardar=false){
-					lblnumest.setText(""+selectEmisora(9));
-				}
-			}
-			if (e.getSource() == favoritos[10]) {
-				if (guardar=true){
-					saveEmisora(10,Double.parseDouble(lblnumest.getText()));
-				}
-				else if(guardar=false){
-					lblnumest.setText(""+selectEmisora(10));
-				}
-			}
-			if (e.getSource() == favoritos[11]) {
-				if (guardar=true){
-					saveEmisora(11,Double.parseDouble(lblnumest.getText()));
-				}
-				else if(guardar=false){
-					lblnumest.setText(""+selectEmisora(11));
-				}
-			}
 			 
 		}
 	}
