@@ -205,11 +205,13 @@ public class GUI_IPOd implements Radio {
 		public void actionPerformed(ActionEvent e) {
 			if (e.getSource() == btnFav1) {
 				System.out.println("hola");
-					if (guardar=true){
+					if (guardar==true){
+						System.out.println("EStoy en true");
 						saveEmisora(0,Double.parseDouble(lblnumest.getText()));
 						System.out.println(lblnumest.getText());
 					}
-					else if(guardar=false){
+					else if(guardar==false){
+						System.out.println("EStoy en false");
 						lblnumest.setText(""+selectEmisora(0));
 						System.out.println(selectEmisora(0));
 					}
@@ -319,6 +321,7 @@ public class GUI_IPOd implements Radio {
 				 }
 			 }
 			if (e.getSource()==combo2) {
+				System.out.println("EStoy");
 				 String seleccionado=(String)combo2.getSelectedItem();
 				 System.out.println(seleccionado);  
 				 if (seleccionado.equals("Guardar")){ 
@@ -326,6 +329,7 @@ public class GUI_IPOd implements Radio {
 				 }
 				 else if(seleccionado.equals("Ingresar")){
 					guardar=false;
+					System.out.println("Entre");
 				 }
 			}
 			if (e.getSource() == btnEncender) {
@@ -419,13 +423,13 @@ public class GUI_IPOd implements Radio {
 
 	@Override
 	public void saveEmisora(int btn, double emisora) {
-		fav[btn]=emisora;
+		this.fav[btn]=emisora;
 		
 	}
 
 	@Override
 	public double selectEmisora(int btn) {
-		return fav[btn];
+		return this.fav[btn];
 	}
 
 	@Override
