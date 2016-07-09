@@ -3,7 +3,7 @@
   associations="true" dependencies="false" nesting-relationships="true">  
   <interface id="1" language="java" name="Radio" project="ADT" file="/ADT/src/Radio.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="207" width="164" x="36" y="275"/>    
+    <position height="-1" width="-1" x="128" y="161"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -12,7 +12,7 @@
   </interface>  
   <class id="2" language="java" name="GUI_IPOd.ManejadorEventos" project="ADT" file="/ADT/src/GUI_IPOd.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="413" y="573"/>    
+    <position height="-1" width="-1" x="407" y="697"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -28,14 +28,27 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <realization id="4">    
+  <class id="4" language="java" name="MainIPOD" project="ADT" file="/ADT/src/MainIPOD.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="721" y="172"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <realization id="5">    
     <end type="SOURCE" refId="3"/>    
     <end type="TARGET" refId="1"/>  
   </realization>  
-  <nesting id="5">    
+  <nesting id="6">    
     <end type="SOURCE" refId="3"/>    
     <end type="TARGET" refId="2"/>  
   </nesting>  
+  <dependency id="7">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    

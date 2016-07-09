@@ -1,7 +1,7 @@
 /**
- * @author Carlos Calderon, seccion: 30
- *
- * Descripcion: Interfaz que describe el funcionamiento de una Radio
+   Interfaz que describe el funcionamiento de una radio.
+   @author Seccion 30. Algoritmos y Estructuras de Datos, Universidad del Valle de Guatemala.
+   @version 1.0.3
  */
 public interface Radio {
 

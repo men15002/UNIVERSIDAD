@@ -14,29 +14,21 @@ import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 
 /**
- * @author JorgeAndres
+ *   Esta clase se encarga de implementar el radio.Ademas,provee la interfaz grafica la cual simula un IPOD que controla como
+ *   si fuera un control remoto, al radio.
+ * @author Carlos Calderon, 15219
+ *  @author Jorge Azmitia,15202
+ * @version 2.0.0 Julio 9, 2016
  *
  */
 public class GUI_IPOd implements Radio {
 
-	/**
-	 * 
-	 */
+	 /* Atributos */
 	private JFrame frmIpod;
 	private JButton btnEncender;
 	private JButton btnretroceder;
 	private JButton btnAvanzar;
 	private JButton btnBtnfav;
-	private JLabel lblEstacion;
-	private JLabel lblnumest;
-	private JLabel lblfavoritos;
-	private JLabel  lblEncendido;
-	private JComboBox combo,combo2;
-	private int cont;
-	private String avisoencendido;
-	private boolean frecuencia=true,estado=true,guardar=true,Est=true;
-	private double emisora,emisoraa=87.9,emisorab=530;
-	private double []fav;
 	private JButton btnFav1;
 	private JButton btnFav2;
 	private JButton btnFav3;
@@ -49,58 +41,42 @@ public class GUI_IPOd implements Radio {
 	private JButton btnFav10;
 	private JButton btnFav11;
 	private JButton btnFav12;
-	/**
-	 * Launch the application.
-	 */
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		new GUI_IPOd();
+	private JLabel lblEstacion;
+	private JLabel lblnumest;
+	private JLabel lblfavoritos;
+	private JLabel  lblEncendido;
+	private JComboBox combo,combo2;
+	private int cont;
+	private String avisoencendido;
+	private boolean frecuencia=true,estado=true,guardar=true,Est=true;
+	private double emisora,emisoraa=87.9,emisorab=530;
+	private double []fav;
+	
 
-	}
-
-	/**
-	 * Create the application.
-	 */
-	/**
-	 * 
-	 */
+	 /**
+    Constructor: no recibe parametros. Inicializa la aplicacion, invocando el método initialize().
+  */
 	public GUI_IPOd() {
 		initialize();
 		frmIpod.setVisible(true);
-
 	}
 
 	/**
-	 * Initialize the contents of the frame.
-	 */
-	/**
-	 * 
+	 * Inicializa los contenidos del Frame.
 	 */
 	private void initialize() {
+		/* Inicializar arreglo de estaciones */
+		fav = new double[12];
+		/* Elementos del Frame */
 		frmIpod = new JFrame();
 		frmIpod.setTitle("IPOD");
-		frmIpod.setBounds(100, 100, 575, 244);
+		frmIpod.setBounds(100, 100, 596, 244);
 		frmIpod.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmIpod.getContentPane().setLayout(null);
-
+		/* Label que indican funciones */
 		lblEstacion = new JLabel("Estacion:");
 		lblEstacion.setBounds(22, 42, 65, 14);
-		frmIpod.getContentPane().add(lblEstacion);
-
-		btnretroceder = new JButton("Retroceder");
-		btnretroceder.setBounds(22, 67, 108, 23);
-		frmIpod.getContentPane().add(btnretroceder);
-
-		btnEncender = new JButton("Encender/Apagar");
-		btnEncender.setBounds(11, 8, 147, 23);
-		frmIpod.getContentPane().add(btnEncender);
-
-		btnAvanzar = new JButton("Avanzar");
-		btnAvanzar.setBounds(140, 67, 108, 23);
-		frmIpod.getContentPane().add(btnAvanzar);
-
+		
 		lblnumest = new JLabel("87.9");
 		lblnumest.setBounds(102, 42, 105, 14);
 		frmIpod.getContentPane().add(lblnumest);
@@ -108,9 +84,27 @@ public class GUI_IPOd implements Radio {
 		lblfavoritos = new JLabel("Favoritos:");
 		lblfavoritos.setBounds(22, 111, 105, 14);
 		frmIpod.getContentPane().add(lblfavoritos);
+		frmIpod.getContentPane().add(lblEstacion);
 		
-		fav = new double[12];
+		avisoencendido="La radio esta apagada.";
+		lblEncendido = new JLabel(avisoencendido);
+		lblEncendido.setBounds(184, 8, 142, 14);
+		frmIpod.getContentPane().add(lblEncendido);
 		
+		/* Botones para cambiar emisora y apagar/encender radio*/
+		btnretroceder = new JButton("Retroceder");
+		btnretroceder.setBounds(22, 67, 108, 23);
+		frmIpod.getContentPane().add(btnretroceder);
+		
+		btnAvanzar = new JButton("Avanzar");
+		btnAvanzar.setBounds(140, 67, 108, 23);
+		frmIpod.getContentPane().add(btnAvanzar);
+		
+		btnEncender = new JButton("Encender/Apagar");
+		btnEncender.setBounds(11, 8, 147, 23);
+		frmIpod.getContentPane().add(btnEncender);
+				
+		/* 12 botones de estaciones */
 		btnFav1 = new JButton("btnFav1");
 		btnFav1.setBounds(11, 130, 84, 28);
 		frmIpod.getContentPane().add(btnFav1);
@@ -152,22 +146,19 @@ public class GUI_IPOd implements Radio {
 		frmIpod.getContentPane().add(btnFav10);
 
 		btnFav11 = new JButton("btnFav11");
-		btnFav11.setBounds(462, 130, 84, 28);
+		btnFav11.setBounds(462, 130, 96, 28);
 		frmIpod.getContentPane().add(btnFav11);
 
 		btnFav12 = new JButton("btnFav12");
-		btnFav12.setBounds(463, 169, 84, 28);
+		btnFav12.setBounds(463, 169, 95, 28);
 		frmIpod.getContentPane().add(btnFav12);
 
-
+		/* Comboboxes para indicar la frecuencia y si los botones favoritos guardan/despliegan*/
 		combo = new JComboBox();
 		combo.addItem("F.M.");
         combo.addItem("A.M.");
 		combo.setBounds(261, 39, 65, 20);
 		frmIpod.getContentPane().add(combo);
-		lblEncendido = new JLabel(avisoencendido);
-		lblEncendido.setBounds(184, 8, 142, 14);
-		frmIpod.getContentPane().add(lblEncendido);
 		
 		combo2 = new JComboBox();
 		combo2.addItem("Guardar");
@@ -175,8 +166,25 @@ public class GUI_IPOd implements Radio {
 		combo2.setBounds(336, 39, 73, 20);
 		frmIpod.getContentPane().add(combo2);
 		
+		/*Bloquear botones para dar efecto encendido/apagado*/
+		btnretroceder.setEnabled(false);
+		combo.setEnabled(false);
+		combo2.setEnabled(false);
+		btnAvanzar.setEnabled(false);
+		btnFav1.setEnabled(false);
+		btnFav2.setEnabled(false);
+		btnFav3.setEnabled(false);
+		btnFav4.setEnabled(false);
+		btnFav5.setEnabled(false);
+		btnFav6.setEnabled(false);
+		btnFav7.setEnabled(false);
+		btnFav8.setEnabled(false);
+		btnFav9.setEnabled(false);
+		btnFav10.setEnabled(false);
+		btnFav11.setEnabled(false);
+		btnFav12.setEnabled(false);	
 		
-
+		/* Agregar listener a los componentes graficos*/
 		combo.addActionListener(new ManejadorEventos());
 		combo2.addActionListener(new ManejadorEventos());
 		btnretroceder.addActionListener(new ManejadorEventos());
@@ -198,37 +206,32 @@ public class GUI_IPOd implements Radio {
 	}
 
 	/**
-	 * @author JorgeAndres
-	 *
+	 * Esta clase interna es la encargada de asignar las funciones que cada componente
+	 * desempeñara en el GUI.
+	 * 	@author Carlos Calderon, 15219
+   	 *	@author Jorge Azmitia,15202
+   	 *	@version 2.0.0 Julio 9, 2016
 	 */
 	private class ManejadorEventos implements ActionListener {
-
+		@Override
 		public void actionPerformed(ActionEvent e) {
 			if (e.getSource() == btnFav1) {
 					if (guardar==true){
 						saveEmisora(0,Double.parseDouble(lblnumest.getText().replace(',','.')));
 					}
 					else if(guardar==false){
-						
 						if (selectEmisora(0)<400){
 							combo.setSelectedItem("F.M.");
 							emisoraa=selectEmisora(0);
 							lblnumest.setText(""+selectEmisora(0));
-							
-
 						}
-						
 						if (selectEmisora(0)>400){
 							combo.setSelectedItem("A.M.");
 
 							emisorab=selectEmisora(0);
 							lblnumest.setText(""+selectEmisora(0));
-}
-						
-						
-						
+							}
 					}
-				
 			}
 			if (e.getSource() == btnFav2) {
 				if (guardar==true){
@@ -239,17 +242,13 @@ public class GUI_IPOd implements Radio {
 						combo.setSelectedItem("F.M.");
 						emisoraa=selectEmisora(0);
 						lblnumest.setText(""+selectEmisora(1));
-						
-
 					}
-					
 					if (selectEmisora(0)>400){
 						combo.setSelectedItem("A.M.");
-
 						emisorab=selectEmisora(0);
 						lblnumest.setText(""+selectEmisora(1));		
 						}
-			}
+				}
 			}
 			if (e.getSource() == btnFav3) {
 				if (guardar==true){
@@ -260,13 +259,9 @@ public class GUI_IPOd implements Radio {
 						combo.setSelectedItem("F.M.");
 						emisoraa=selectEmisora(0);
 						lblnumest.setText(""+selectEmisora(2));
-						
-
 					}
-					
 					if (selectEmisora(0)>400){
 						combo.setSelectedItem("A.M.");
-
 						emisorab=selectEmisora(0);
 						lblnumest.setText(""+selectEmisora(2));		
 						}
@@ -281,13 +276,9 @@ public class GUI_IPOd implements Radio {
 						combo.setSelectedItem("F.M.");
 						emisoraa=selectEmisora(0);
 						lblnumest.setText(""+selectEmisora(3));
-						
-
 					}
-					
 					if (selectEmisora(0)>400){
 						combo.setSelectedItem("A.M.");
-
 						emisorab=selectEmisora(0);
 						lblnumest.setText(""+selectEmisora(3));		
 						}
@@ -302,19 +293,14 @@ public class GUI_IPOd implements Radio {
 						combo.setSelectedItem("F.M.");
 						emisoraa=selectEmisora(0);
 						lblnumest.setText(""+selectEmisora(4));
-						
-
 					}
-					
 					if (selectEmisora(0)>400){
 						combo.setSelectedItem("A.M.");
-
 						emisorab=selectEmisora(0);
 						lblnumest.setText(""+selectEmisora(4));		
 						}				
 					}
 			}
-			
 			if (e.getSource() == btnFav6) {
 				if (guardar==true){
 					saveEmisora(5,Double.parseDouble(lblnumest.getText().replace(',','.')));
@@ -323,14 +309,10 @@ public class GUI_IPOd implements Radio {
 					if (selectEmisora(0)<400){
 						combo.setSelectedItem("F.M.");
 						emisoraa=selectEmisora(0);
-						lblnumest.setText(""+selectEmisora(5));
-						
-
+						lblnumest.setText(""+selectEmisora(5));			
 					}
-					
 					if (selectEmisora(0)>400){
 						combo.setSelectedItem("A.M.");
-
 						emisorab=selectEmisora(0);
 						lblnumest.setText(""+selectEmisora(5));		
 						}				
@@ -341,18 +323,13 @@ public class GUI_IPOd implements Radio {
 					saveEmisora(6,Double.parseDouble(lblnumest.getText().replace(',','.')));
 				}
 				else if(guardar==false){
-
 					if (selectEmisora(0)<400){
 						combo.setSelectedItem("F.M.");
 						emisoraa=selectEmisora(0);
 						lblnumest.setText(""+selectEmisora(6));
-						
-
 					}
-					
 					if (selectEmisora(0)>400){
 						combo.setSelectedItem("A.M.");
-
 						emisorab=selectEmisora(0);
 						lblnumest.setText(""+selectEmisora(6));		
 						}
@@ -367,13 +344,9 @@ public class GUI_IPOd implements Radio {
 						combo.setSelectedItem("F.M.");
 						emisoraa=selectEmisora(0);
 						lblnumest.setText(""+selectEmisora(7));
-						
-
 					}
-					
 					if (selectEmisora(0)>400){
 						combo.setSelectedItem("A.M.");
-
 						emisorab=selectEmisora(0);
 						lblnumest.setText(""+selectEmisora(7));		
 						}					
@@ -388,13 +361,9 @@ public class GUI_IPOd implements Radio {
 						combo.setSelectedItem("F.M.");
 						emisoraa=selectEmisora(0);
 						lblnumest.setText(""+selectEmisora(8));
-						
-
 					}
-					
 					if (selectEmisora(0)>400){
 						combo.setSelectedItem("A.M.");
-
 						emisorab=selectEmisora(0);
 						lblnumest.setText(""+selectEmisora(8));		
 						}
@@ -405,18 +374,13 @@ public class GUI_IPOd implements Radio {
 					saveEmisora(9,Double.parseDouble(lblnumest.getText().replace(',','.')));
 				}
 				else if(guardar==false){
-
 					if (selectEmisora(0)<400){
 						combo.setSelectedItem("F.M.");
 						emisoraa=selectEmisora(0);
 						lblnumest.setText(""+selectEmisora(9));
-						
-
 					}
-					
 					if (selectEmisora(0)>400){
 						combo.setSelectedItem("A.M.");
-
 						emisorab=selectEmisora(0);
 						lblnumest.setText(""+selectEmisora(9));		
 						}
@@ -431,13 +395,9 @@ public class GUI_IPOd implements Radio {
 						combo.setSelectedItem("F.M.");
 						emisoraa=selectEmisora(0);
 						lblnumest.setText(""+selectEmisora(10));
-						
-
 					}
-					
 					if (selectEmisora(0)>400){
 						combo.setSelectedItem("A.M.");
-
 						emisorab=selectEmisora(0);
 						lblnumest.setText(""+selectEmisora(10));		
 						}
@@ -452,23 +412,16 @@ public class GUI_IPOd implements Radio {
 						combo.setSelectedItem("F.M.");
 						emisoraa=selectEmisora(0);
 						lblnumest.setText(""+selectEmisora(11));
-						
-
 					}
-					
 					if (selectEmisora(0)>400){
 						combo.setSelectedItem("A.M.");
-
 						emisorab=selectEmisora(0);
 						lblnumest.setText(""+selectEmisora(11));		
 						}
-				
 				}
 			}
 			if (e.getSource()==combo) {
-				 
-				 String seleccionado=(String)combo.getSelectedItem();
-				 System.out.println(seleccionado);  
+				 String seleccionado=(String)combo.getSelectedItem(); 
 				 if (seleccionado.equals("F.M.")){ 
 					 Est=true;
 					 setFrecuencia(true);
@@ -482,15 +435,12 @@ public class GUI_IPOd implements Radio {
 				 }
 			 }
 			if (e.getSource()==combo2) {
-				System.out.println("EStoy");
 				 String seleccionado=(String)combo2.getSelectedItem();
-				 System.out.println(seleccionado);  
 				 if (seleccionado.equals("Guardar")){ 
 					 guardar=true;
 				 }
 				 else if(seleccionado.equals("Ingresar")){
 					guardar=false;
-					System.out.println("Entre");
 				 }
 			}
 			if (e.getSource() == btnEncender) {
@@ -500,16 +450,12 @@ public class GUI_IPOd implements Radio {
 				}
 				else if(cont%2==0) {
 					setEncendido(false);
-					
 				}
-				
 			}
 			if (e.getSource() == btnretroceder) {
-				
 				if (getFrecuencia() ==true){
 					if(emisoraa==87.9){
-						emisoraa=87.9;
-						
+						emisoraa=87.9;	
 					}
 					else if (emisoraa>87.9||emisoraa<=107.9){
 						emisoraa=emisoraa-.2;
@@ -547,14 +493,19 @@ public class GUI_IPOd implements Radio {
 						emisorab=emisorab+10;
 						lblnumest.setText((""+emisorab).replace(',','.'));
 					}
+				}	 
 			}
-			
-			 
 		}
+
 	}
-
-}
-
+	
+	/**Metodos implementados de Radio*/
+	
+	/**
+    setEncendido recibe como parametro el estado booleano del radio. True es encendido y false es apagado.
+    Luego activa el estado, bloqueando o no los botones.
+    @param estado, el estado del radio si es apagado o encendido.
+  */
 	@Override
 	public void setEncendido(boolean estado) {
 		this.estado=estado;
@@ -577,8 +528,6 @@ public class GUI_IPOd implements Radio {
 				btnFav10.setEnabled(true);
 				btnFav11.setEnabled(true);
 				btnFav12.setEnabled(true);	
-
-
 			}
 			else if (this.estado==false){
 				avisoencendido= "La radio esta apagada.";
@@ -599,49 +548,66 @@ public class GUI_IPOd implements Radio {
 				btnFav10.setEnabled(false);
 				btnFav11.setEnabled(false);
 				btnFav12.setEnabled(false);	
-
-
-
 			}
-			
-			
 		}
-		
-	
-
+	/**
+    setFrecuencia recibe como parametro booleano la frecuencia a la que se desea funcione el radio.
+    True es FM y false es AM.
+    @param frecuencia, AM o FM.
+  */
 	@Override
 	public void setFrecuencia(boolean frecuencia) {
 		this.frecuencia=frecuencia;
-		
 	}
 
+	/**
+    	setEmisora recibe como parametro tipo double la emisora que se desea sintonizar. Luego la asigna al atributo respectivo.
+    	@param emisora, la emisora que se desea sintonizar.
+	*/
 	@Override
 	public void setEmisora(double emisora) {
 		this.emisora=emisora;
-		
 	}
 
+	/**
+    saveEmisora recibe como parametros el numero de boton (1-12) y la emisora respectiva. Asigna la emisora escogida al boton.
+    @param btn, tipo int define el numero de boton al que se desea asignar una emisora.
+    @param emisora, tipo double define la emisora que se desea guardar en el boton.
+  */
 	@Override
 	public void saveEmisora(int btn, double emisora) {
 		this.fav[btn]=emisora;
-		
 	}
 
+	/**
+    selectEmisora recibe como parametro el numero de boton, y devuelve la emisora guardada en dicho boton.
+    @param btn, tipo int define el numero de boton.
+    @return fav[btn], arreglo de emisoras que corresponde al respectivo boton,en base a indice..
+  */
 	@Override
 	public double selectEmisora(int btn) {
 		return this.fav[btn];
 	}
 
+	/**
+    @return estado, el valor booleano del estado de encendido del radio.
+  */
 	@Override
 	public boolean getEncendido() {
 		return this.estado;
 	}
 
+	 /**
+    @return frecuencia, el valor booleano de la frecuencia (AM o FM)
+	 */
 	@Override
 	public boolean getFrecuencia() {
 		return this.frecuencia;
 	}
 
+	/**
+    @return emisora, el valor tipo double de la emisora de la radio.
+    */
 	@Override
 	public double getEmisora() {
 		return this.emisora;
