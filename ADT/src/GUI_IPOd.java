@@ -1,5 +1,6 @@
 
 import java.awt.EventQueue;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
@@ -33,7 +34,7 @@ public class GUI_IPOd implements Radio {
 	private JComboBox combo,combo2;
 	private int cont;
 	private String avisoencendido;
-	private boolean frecuencia=true,estado=true,guardar=true;
+	private boolean frecuencia=true,estado=true,guardar=true,Est=true;
 	private double emisora,emisoraa=87.9,emisorab=530;
 	private double []fav;
 	private JButton btnFav1;
@@ -205,16 +206,29 @@ public class GUI_IPOd implements Radio {
 		public void actionPerformed(ActionEvent e) {
 			if (e.getSource() == btnFav1) {
 					if (guardar==true){
-						saveEmisora(0,Double.parseDouble(lblnumest.getText()));
+						saveEmisora(0,Double.parseDouble(lblnumest.getText().replace(',','.')));
 					}
 					else if(guardar==false){
-						lblnumest.setText(""+selectEmisora(0));
+						
+						if (selectEmisora(0)<400){
+							lblnumest.setText(""+selectEmisora(0));
+							combo.setSelectedItem("F.M.");
+
+						}
+						
+						if (selectEmisora(0)>400){
+							lblnumest.setText(""+selectEmisora(0));
+							combo.setSelectedItem("A.M.");
+}
+						
+						
+						
 					}
 				
 			}
 			if (e.getSource() == btnFav2) {
 				if (guardar==true){
-					saveEmisora(1,Double.parseDouble(lblnumest.getText()));
+					saveEmisora(1,Double.parseDouble(lblnumest.getText().replace(',','.')));
 				}
 				else if(guardar==false){
 					lblnumest.setText(""+selectEmisora(1));
@@ -223,7 +237,7 @@ public class GUI_IPOd implements Radio {
 
 			if (e.getSource() == btnFav3) {
 				if (guardar==true){
-					saveEmisora(2,Double.parseDouble(lblnumest.getText()));
+					saveEmisora(2,Double.parseDouble(lblnumest.getText().replace(',','.')));
 				}
 				else if(guardar==false){
 					lblnumest.setText(""+selectEmisora(2));
@@ -231,7 +245,7 @@ public class GUI_IPOd implements Radio {
 			}
 			if (e.getSource() == btnFav4) {
 				if (guardar==true){
-					saveEmisora(3,Double.parseDouble(lblnumest.getText()));
+					saveEmisora(3,Double.parseDouble(lblnumest.getText().replace(',','.')));
 				}
 				else if(guardar==false){
 					lblnumest.setText(""+selectEmisora(3));
@@ -239,7 +253,7 @@ public class GUI_IPOd implements Radio {
 			}
 			if (e.getSource() == btnFav5) {
 				if (guardar==true){
-					saveEmisora(4,Double.parseDouble(lblnumest.getText()));
+					saveEmisora(4,Double.parseDouble(lblnumest.getText().replace(',','.')));
 				}
 				else if(guardar==false){
 					lblnumest.setText(""+selectEmisora(4));
@@ -247,7 +261,7 @@ public class GUI_IPOd implements Radio {
 			}
 			if (e.getSource() == btnFav6) {
 				if (guardar==true){
-					saveEmisora(5,Double.parseDouble(lblnumest.getText()));
+					saveEmisora(5,Double.parseDouble(lblnumest.getText().replace(',','.')));
 				}
 				else if(guardar==false){
 					lblnumest.setText(""+selectEmisora(5));
@@ -255,7 +269,7 @@ public class GUI_IPOd implements Radio {
 			}
 			if (e.getSource() == btnFav7) {
 				if (guardar==true){
-					saveEmisora(6,Double.parseDouble(lblnumest.getText()));
+					saveEmisora(6,Double.parseDouble(lblnumest.getText().replace(',','.')));
 				}
 				else if(guardar==false){
 					lblnumest.setText(""+selectEmisora(6));
@@ -263,7 +277,7 @@ public class GUI_IPOd implements Radio {
 			}
 			if (e.getSource() == btnFav8) {
 				if (guardar==true){
-					saveEmisora(7,Double.parseDouble(lblnumest.getText()));
+					saveEmisora(7,Double.parseDouble(lblnumest.getText().replace(',','.')));
 				}
 				else if(guardar==false){
 					lblnumest.setText(""+selectEmisora(7));
@@ -271,7 +285,7 @@ public class GUI_IPOd implements Radio {
 			}
 			if (e.getSource() == btnFav9) {
 				if (guardar==true){
-					saveEmisora(8,Double.parseDouble(lblnumest.getText()));
+					saveEmisora(8,Double.parseDouble(lblnumest.getText().replace(',','.')));
 				}
 				else if(guardar==false){
 					lblnumest.setText(""+selectEmisora(8));
@@ -279,7 +293,7 @@ public class GUI_IPOd implements Radio {
 			}
 			if (e.getSource() == btnFav10) {
 				if (guardar==true){
-					saveEmisora(9,Double.parseDouble(lblnumest.getText()));
+					saveEmisora(9,Double.parseDouble(lblnumest.getText().replace(',','.')));
 				}
 				else if(guardar==false){
 					lblnumest.setText(""+selectEmisora(9));
@@ -287,7 +301,7 @@ public class GUI_IPOd implements Radio {
 			}
 			if (e.getSource() == btnFav11) {
 				if (guardar==true){
-					saveEmisora(10,Double.parseDouble(lblnumest.getText()));
+					saveEmisora(10,Double.parseDouble(lblnumest.getText().replace(',','.')));
 				}
 				else if(guardar==false){
 					lblnumest.setText(""+selectEmisora(10));
@@ -295,7 +309,7 @@ public class GUI_IPOd implements Radio {
 			}
 			if (e.getSource() == btnFav12) {
 				if (guardar==true){
-					saveEmisora(11,Double.parseDouble(lblnumest.getText()));
+					saveEmisora(11,Double.parseDouble(lblnumest.getText().replace(',','.')));
 				}
 				else if(guardar==false){
 					lblnumest.setText(""+selectEmisora(11));
@@ -306,11 +320,13 @@ public class GUI_IPOd implements Radio {
 				 String seleccionado=(String)combo.getSelectedItem();
 				 System.out.println(seleccionado);  
 				 if (seleccionado.equals("F.M.")){ 
+					 Est=true;
 					 setFrecuencia(true);
 					 emisoraa=87.9;
 					 lblnumest.setText(""+emisoraa);
 				 }
 				 else if (seleccionado.equals("A.M.")){
+					 Est=false;
 					 setFrecuencia(false); 
 					 lblnumest.setText(""+emisorab);
 				 }
@@ -364,13 +380,12 @@ public class GUI_IPOd implements Radio {
 			if (e.getSource() == btnAvanzar) {
 				if (getFrecuencia()==true){
 					if(emisoraa==107.9){
-						System.out.println("tope");
 						emisoraa=emisoraa;
 					}
 					else if (emisoraa>=87.9 && emisoraa<107.9){
 						emisoraa=emisoraa+.2;
 						DecimalFormat formateador = new DecimalFormat("###0.##"); 
-						lblnumest.setText(""+formateador.format(emisoraa));
+						lblnumest.setText((""+formateador.format(emisoraa).replace(',','.')));
 					}
 				}
 				else if (getFrecuencia() ==false){
@@ -380,7 +395,7 @@ public class GUI_IPOd implements Radio {
 					
 					else if(emisorab>530||emisorab<1610){
 						emisorab=emisorab+10;
-						lblnumest.setText(""+emisorab);
+						lblnumest.setText((""+emisorab).replace(',','.'));
 					}
 			}
 			
