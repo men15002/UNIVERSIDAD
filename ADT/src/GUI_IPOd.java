@@ -1,11 +1,9 @@
 
 import java.awt.EventQueue;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
 import java.text.ParseException;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JButton;
@@ -454,8 +452,9 @@ public class GUI_IPOd implements Radio {
 			}
 			if (e.getSource() == btnretroceder) {
 				if (getFrecuencia() ==true){
-					if(emisoraa==87.9){
-						emisoraa=87.9;	
+					if(emisoraa==0.0){
+						emisoraa=0.0;
+
 					}
 					else if (emisoraa>87.9||emisoraa<=107.9){
 						emisoraa=emisoraa-.2;
@@ -464,7 +463,7 @@ public class GUI_IPOd implements Radio {
 					}
 				}
 				else if (getFrecuencia() ==false){
-					if(emisorab==530){
+					if(emisorab==0.0){
 						emisorab=emisorab;
 					}
 					else if(emisorab>530||emisorab<=1610){
@@ -475,8 +474,11 @@ public class GUI_IPOd implements Radio {
 			}
 			if (e.getSource() == btnAvanzar) {
 				if (getFrecuencia()==true){
-					if(emisoraa==107.9){
-						emisoraa=emisoraa;
+					if(emisoraa==0.0){
+						emisoraa=87.9;
+						DecimalFormat formateador = new DecimalFormat("###0.##"); 
+						lblnumest.setText((""+formateador.format(emisoraa).replace(',','.')));
+
 					}
 					else if (emisoraa>=87.9 && emisoraa<107.9){
 						emisoraa=emisoraa+.2;
