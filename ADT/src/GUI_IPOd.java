@@ -16,7 +16,7 @@ import javax.swing.DefaultComboBoxModel;
  *   si fuera un control remoto, al radio.
  * @author Carlos Calderon, 15219
  *  @author Jorge Azmitia,15202
- * @version 2.1.2 Julio 9, 2016
+ * @version 2.1.3 Julio 9, 2016
  *
  */
 public class GUI_IPOd implements Radio {
