@@ -10,7 +10,7 @@ Sección: 30
 ![Alt text](UML.jpg "UML")
 
 # Prueba unitaria
-Prueba 1:
+Prueba con error:
 ![Alt text](Con error.png "Prueba con error")
-Prueba 2:
+Prueba sin error:
 ![Alt text](Sin error.png "Prueba sin error")
